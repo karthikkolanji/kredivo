@@ -1,15 +1,15 @@
 package com.example.pulsa.data.datasource.repository.model
 
 import androidx.annotation.Keep
+import com.example.pulsa.data.datasource.remote.model.VoucherItemApiModel
 
 @Keep
 data class VoucherResponseDataModel(
-    val data: List<DetailsResponseDataModel>,
-    val status: String
+    val voucherItems: List<VoucherItemDataModel>,
 )
 
 @Keep
-data class DetailsResponseDataModel(
+data class VoucherItemDataModel(
     val endDate: String,
     val howToUse: String,
     val imageUrl: String,
