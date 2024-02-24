@@ -6,6 +6,7 @@ import com.example.pulsa.data.datasource.repository.TopUpRepository
 import com.example.pulsa.data.datasource.repository.TopUpRepositoryImp
 import com.example.pulsa.data.datasource.repository.mapper.PaymentDetailsResponseApiToDataMapper
 import com.example.pulsa.data.datasource.repository.mapper.PulsaPlansResponseApiToDataMapper
+import com.example.pulsa.data.datasource.repository.mapper.VoucherResponseApiToDataMapper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,12 +29,14 @@ class DataModule {
     fun provideRepository(
         topUpRemoteDataSource: TopUpRemoteDataSource,
         pulsaPlansResponseApiToDataMapper: PulsaPlansResponseApiToDataMapper,
-        paymentDetailsResponseApiToDataMapper: PaymentDetailsResponseApiToDataMapper
+        paymentDetailsResponseApiToDataMapper: PaymentDetailsResponseApiToDataMapper,
+        voucherResponseApiToDataMapper: VoucherResponseApiToDataMapper
     ): TopUpRepository {
         return TopUpRepositoryImp(
             topUpRemoteDataSource,
             pulsaPlansResponseApiToDataMapper,
-            paymentDetailsResponseApiToDataMapper
+            paymentDetailsResponseApiToDataMapper,
+            voucherResponseApiToDataMapper
         )
     }
 }
