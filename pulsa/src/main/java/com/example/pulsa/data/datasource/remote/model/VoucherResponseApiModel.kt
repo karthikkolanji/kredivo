@@ -1,15 +1,17 @@
 package com.example.pulsa.data.datasource.remote.model
 
 import androidx.annotation.Keep
+import com.google.gson.annotations.SerializedName
 
 @Keep
 data class VoucherResponseApiModel(
-    val data: List<Data>,
+    @SerializedName("data")
+    val voucherItem: List<VoucherItemApiModel>,
     val status: String
 )
 
 @Keep
-data class Data(
+data class VoucherItemApiModel(
     val end_date: String,
     val how_to_use: String,
     val image_url: String,

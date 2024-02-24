@@ -5,6 +5,6 @@ import javax.inject.Inject
 class TopUpRemoteDataSource @Inject constructor(private val apiService: ApiService) {
 
     suspend fun getPulsaPlans()=apiService.getPlans()
-
     suspend fun makePayment()=apiService.makePayment()
+    suspend fun getVoucher()=apiService.getVoucher()
 }
