@@ -1,9 +1,10 @@
 package com.example.pulsa.data.datasource.repository.di
 
-import com.example.pulsa.data.datasource.remote.PulsaApiService
-import com.example.pulsa.data.datasource.remote.PulsaRemoteDataSource
-import com.example.pulsa.data.datasource.repository.PulsaRepository
-import com.example.pulsa.data.datasource.repository.PulsaRepositoryImp
+import com.example.pulsa.data.datasource.remote.ApiService
+import com.example.pulsa.data.datasource.remote.TopUpRemoteDataSource
+import com.example.pulsa.data.datasource.repository.TopUpRepository
+import com.example.pulsa.data.datasource.repository.TopUpRepositoryImp
+import com.example.pulsa.data.datasource.repository.mapper.PaymentDetailsResponseApiToDataMapper
 import com.example.pulsa.data.datasource.repository.mapper.PulsaPlansResponseApiToDataMapper
 import dagger.Module
 import dagger.Provides
@@ -18,16 +19,21 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun provideApiService(retrofit: Retrofit): PulsaApiService {
-        return retrofit.create(PulsaApiService::class.java)
+    fun provideApiService(retrofit: Retrofit): ApiService {
+        return retrofit.create(ApiService::class.java)
     }
 
     @Provides
     @Singleton
     fun provideRepository(
-        pulsaRemoteDataSource: PulsaRemoteDataSource,
-        pulsaPlansResponseApiToDataMapper: PulsaPlansResponseApiToDataMapper
-    ): PulsaRepository {
-        return PulsaRepositoryImp(pulsaRemoteDataSource, pulsaPlansResponseApiToDataMapper)
+        topUpRemoteDataSource: TopUpRemoteDataSource,
+        pulsaPlansResponseApiToDataMapper: PulsaPlansResponseApiToDataMapper,
+        paymentDetailsResponseApiToDataMapper: PaymentDetailsResponseApiToDataMapper
+    ): TopUpRepository {
+        return TopUpRepositoryImp(
+            topUpRemoteDataSource,
+            pulsaPlansResponseApiToDataMapper,
+            paymentDetailsResponseApiToDataMapper
+        )
     }
 }
