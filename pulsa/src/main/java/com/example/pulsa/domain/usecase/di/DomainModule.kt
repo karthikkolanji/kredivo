@@ -1,9 +1,10 @@
 package com.example.pulsa.domain.usecase.di
 
-import com.example.pulsa.data.datasource.repository.PulsaRepository
+import com.example.pulsa.data.datasource.repository.TopUpRepository
+import com.example.pulsa.domain.mapper.PaymentDetailsResponseDataToDomainMapper
 import com.example.pulsa.domain.mapper.ProductResponseDataToDomainMapper
-import com.example.pulsa.domain.usecase.PulsaPlansUseCase
-import com.example.pulsa.domain.usecase.PulsaPlansUseCaseImp
+import com.example.pulsa.domain.usecase.TopUpUseCase
+import com.example.pulsa.domain.usecase.TopUpUseCaseImp
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,9 +17,14 @@ class DomainModule {
     @Provides
     @Singleton
     fun provideRepository(
-        pulsaRepository: PulsaRepository,
-        productResponseDataToDomainMapper: ProductResponseDataToDomainMapper
-    ): PulsaPlansUseCase {
-        return PulsaPlansUseCaseImp(pulsaRepository, productResponseDataToDomainMapper)
+        topUpRepository: TopUpRepository,
+        productResponseDataToDomainMapper: ProductResponseDataToDomainMapper,
+        paymentDetailsResponseDataToDomainMapper: PaymentDetailsResponseDataToDomainMapper
+    ): TopUpUseCase {
+        return TopUpUseCaseImp(
+            topUpRepository,
+            productResponseDataToDomainMapper,
+            paymentDetailsResponseDataToDomainMapper
+        )
     }
 }
