@@ -51,10 +51,14 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
 dependencies {
+    implementation(project(":pulsa"))
+    implementation(project(":core"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.fragment.ktx)
@@ -63,6 +67,8 @@ dependencies {
     implementation(libs.google.material)
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+    implementation(libs.timber)
+
 
     testImplementation(libs.junit4)
     testImplementation(libs.mockk)
