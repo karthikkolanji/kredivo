@@ -3,7 +3,7 @@ package com.example.pulsa.data.datasource.remote.model
 import androidx.annotation.Keep
 
 @Keep
-data class PulsaTransactionResponseApiModel(
+data class PaymentDetailsResponseApiModel(
     val message: String,
     val status: String,
     val transaction_context: TransactionContextResponseApiModel
