@@ -1,4 +1,4 @@
-package com.vmware.core.utils
+package com.example.core.utils
 
 sealed class UiState<out T> {
     data object Loading : UiState<Nothing>()

@@ -1,5 +1,6 @@
 package com.example.core.di
 
+import com.example.core.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -9,7 +10,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-const val BASE_URL = "https://run.mocky.io/v3/"
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -23,7 +23,7 @@ class RetrofitModule {
     ): Retrofit {
         return Retrofit.Builder()
             .client(okHttpClient)
-            .baseUrl(BASE_URL)
+            .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(gsonConverterFactory)
             .build()
     }

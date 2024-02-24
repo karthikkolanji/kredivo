@@ -1,6 +1,5 @@
 package com.example.core.utils
 
-import com.vmware.core.utils.UiState
 import retrofit2.HttpException
 import java.net.ConnectException
 import java.net.SocketTimeoutException
