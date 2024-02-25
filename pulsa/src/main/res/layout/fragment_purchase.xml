@@ -3,9 +3,9 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root_view"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -183,12 +183,12 @@
             app:layout_constraintTop_toBottomOf="@+id/view_border_4" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_voucher"
+            android:id="@+id/cl_apply_voucher"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/view_border"
+            android:background="@drawable/view_border_grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/iv_provider_logo"
             app:layout_constraintTop_toBottomOf="@+id/tv_voucher">
@@ -237,6 +237,65 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_voucher_voucher_applied"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:visibility="gone"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/view_border_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/iv_provider_logo"
+            app:layout_constraintTop_toBottomOf="@+id/cl_apply_voucher">
+
+
+            <ImageView
+                android:id="@+id/iv_voucher_applied"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_tick"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_voucher_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="@string/voucher_for_you"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_medium"
+                android:textStyle="normal"
+                app:layout_constraintStart_toEndOf="@+id/iv_voucher_applied"
+                app:layout_constraintTop_toTopOf="@+id/iv_voucher_applied" />
+
+            <TextView
+                android:id="@+id/tv_voucher_discount_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/voucher_for_you"
+                android:textColor="@color/green"
+                android:textSize="@dimen/tv_small"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="@+id/tv_voucher_discount"
+                app:layout_constraintTop_toBottomOf="@+id/tv_voucher_discount" />
+
+            <ImageView
+                android:id="@+id/iv_voucher_close"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_close"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <View
             android:id="@+id/view_border_5"
             android:layout_width="match_parent"
@@ -245,7 +304,7 @@
             android:background="@color/grey_light"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cl_voucher" />
+            app:layout_constraintTop_toBottomOf="@+id/cl_voucher_voucher_applied" />
 
         <TextView
             android:id="@+id/tv_pin"
