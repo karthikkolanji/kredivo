@@ -5,12 +5,12 @@ import androidx.annotation.Keep
 @Keep
 data class PulsaPlansResponseDataModel(
     val message: String?,
-    val products: List<ProductResponseDataModel>,
+    val plans: List<PlansItemResponseDataModel>,
     val status: String
 )
 
 @Keep
-data class ProductResponseDataModel(
+data class PlansItemResponseDataModel(
     val billType: String,
     val description: String,
     val label: String,

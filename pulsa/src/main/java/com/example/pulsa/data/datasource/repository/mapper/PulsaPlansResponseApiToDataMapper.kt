@@ -9,7 +9,7 @@ class PulsaPlansResponseApiToDataMapper @Inject constructor(private val productR
     ApiToDataMapper<PulsaPlansResponseApiModel, PulsaPlansResponseDataModel>() {
     override fun map(input: PulsaPlansResponseApiModel) = PulsaPlansResponseDataModel(
         message = input.message,
-        products = input.products.map { productResponseApiToDataMapper.toData(it) },
+        plans = input.products.map { productResponseApiToDataMapper.toData(it) },
         status = input.status
     )
 }

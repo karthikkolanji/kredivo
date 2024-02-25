@@ -1,3 +1,9 @@
 <resources>
     <string name="title_top_up">Top Up</string>
+    <string name="currency">Rp</string>
+    <string name="validity">Validity</string>
+    <string name="validity_unlimited">Unlimited</string>
+    <string name="talk_time">Talktime</string>
+    <string name="recharge">Recharge</string>
+    <string name="recharge_amount">Rp %1$s</string>
 </resources>

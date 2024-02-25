@@ -18,16 +18,15 @@ fun View.gone() {
     visibility = View.GONE
 }
 
-fun View.snackbar(@StringRes stringId: Int, duration: Int): Snackbar =
+fun View.snackbar(message: String, duration: Int): Snackbar =
     Snackbar.make(
         this,
         HtmlCompat.fromHtml(
-            "<font color=\"#ffffff\">${context.getString(stringId)}</font>",
+            "<font color=\"#ffffff\">${message}</font>",
             HtmlCompat.FROM_HTML_MODE_LEGACY,
         ),
-        duration,
+        duration,)
 
-        )
 
 fun View.setBooleanVisibility(value: Boolean) {
     if (value) {

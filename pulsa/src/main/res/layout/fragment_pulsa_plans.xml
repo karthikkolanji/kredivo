@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/root_view"
     android:layout_margin="@dimen/activity_margin">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -36,7 +37,7 @@
         android:id="@+id/tv_empty_plans"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/empty_transactions"
+        android:text=""
         android:textSize="@dimen/tv_extra_large"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"

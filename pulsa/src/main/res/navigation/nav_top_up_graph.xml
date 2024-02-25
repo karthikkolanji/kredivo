@@ -8,8 +8,8 @@
 
     <fragment
         android:id="@+id/pulsaPlansFragment"
-        android:name="com.example.pulsa.ui.PulsaPlansFragment"
-        android:label="@string/perform_transactions"
+        android:name="com.example.pulsa.ui.plans.PulsaPlansFragment"
+        android:label=""
         tools:layout="@layout/fragment_pulsa_plans" />
 
 </navigation>

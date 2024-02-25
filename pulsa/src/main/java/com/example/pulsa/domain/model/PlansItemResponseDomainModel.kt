@@ -1,6 +1,6 @@
 package com.example.pulsa.domain.model
 
-data class ProductResponseDomainModel(
+data class PlansItemResponseDomainModel(
     val billType: String,
     val description: String,
     val label: String,
