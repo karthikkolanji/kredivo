@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.core.extensions.gone
 import com.example.core.extensions.snackbar
 import com.example.core.extensions.viewLifecycleScoped
@@ -15,6 +16,7 @@ import com.example.core.utils.UiState.Loading
 import com.example.core.utils.UiState.Success
 import com.example.pulsa.R
 import com.example.pulsa.databinding.FragmentPulsaPlansBinding
+import com.example.pulsa.ui.TopUpFragmentDirections
 import com.example.pulsa.ui.plans.mapper.PlansResponseDomainToUiMapper
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -50,8 +52,10 @@ class PulsaPlansFragment : Fragment(R.layout.fragment_pulsa_plans) {
 
                     is Success -> {
                         val plans = plansResponseDomainToUiMapper.toUi(state.data)
-                        setAdapter(PlansAdapter(plans.item) { rechargeProductCode ->
-
+                        setAdapter(PlansAdapter(plans.item) { plan ->
+                            findNavController().navigate(
+                                TopUpFragmentDirections.actionTopupFragmentToPurchaseFragment(plan)
+                            )
                         })
                     }
 

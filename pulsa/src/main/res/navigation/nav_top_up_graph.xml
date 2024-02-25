@@ -3,19 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/top_up_graph"
-    app:startDestination="@id/purchaseFragment">
+    app:startDestination="@id/topupFragment">
 
 
-    <!--    <fragment-->
-    <!--        android:id="@+id/topupFragment"-->
-    <!--        android:name="com.example.pulsa.ui.TopUpFragment"-->
-    <!--        android:label="@string/top_up"-->
-    <!--        tools:layout="@layout/fragment_top_up" />-->
+        <fragment
+            android:id="@+id/topupFragment"
+            android:name="com.example.pulsa.ui.TopUpFragment"
+            android:label="@string/top_up"
+            tools:layout="@layout/fragment_top_up" >
+
+            <action
+                android:id="@+id/action_topupFragment_to_purchaseFragment"
+                app:destination="@+id/purchaseFragment"/>
+        </fragment>
 
     <fragment
         android:id="@+id/purchaseFragment"
         android:name="com.example.pulsa.ui.purchase.PurchaseFragment"
         android:label="@string/purchase"
-        tools:layout="@layout/fragment_purchase" />
+        tools:layout="@layout/fragment_purchase" >
+        <argument
+            android:name="plan"
+            app:argType="com.example.pulsa.ui.plans.model.PlansItemResponseUiModel"/>
+    </fragment>
 
 </navigation>

@@ -11,7 +11,7 @@ import com.example.pulsa.ui.plans.model.PlansItemResponseUiModel
 
 class PlansAdapter(
     private val mList: List<PlansItemResponseUiModel>,
-    private val onRechargeAction: (String) -> Unit
+    private val onRechargeAction: (PlansItemResponseUiModel) -> Unit
 ) :
     RecyclerView.Adapter<PlansAdapter.ViewHolder>() {
 
@@ -36,7 +36,7 @@ class PlansAdapter(
             plan.talkTimeAmount
         )
         holder.tvProductName.text = plan.productName
-        holder.btnRecharge.setOnClickListener { onRechargeAction(plan.productCode) }
+        holder.btnRecharge.setOnClickListener { onRechargeAction(plan) }
 
     }
 
