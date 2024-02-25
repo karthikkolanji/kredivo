@@ -13,13 +13,16 @@ import com.example.core.utils.UiState
 import com.example.pulsa.R
 import com.example.pulsa.databinding.BottomSheetVoucherBinding
 import com.example.pulsa.ui.voucher.mapper.VoucherResponseDomainToUiMapper
+import com.example.pulsa.ui.voucher.model.VoucherItemUiModel
+import com.example.pulsa.ui.voucher.model.VoucherResponseUiModelModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class VoucherBottomSheetDialog : BottomSheetDialogFragment(R.layout.bottom_sheet_voucher) {
+class VoucherBottomSheetDialog(private val onVoucherAppliedAction: (VoucherItemUiModel) -> Unit) :
+    BottomSheetDialogFragment(R.layout.bottom_sheet_voucher) {
 
     private val binding: BottomSheetVoucherBinding by viewLifecycleScoped(
         BottomSheetVoucherBinding::bind
@@ -55,7 +58,8 @@ class VoucherBottomSheetDialog : BottomSheetDialogFragment(R.layout.bottom_sheet
                     is UiState.Success -> {
                         val voucher = voucherResponseDomainToUiMapper.toUi(state.data)
                         setAdapter(VoucherAdapter(voucher.voucherItems) { voucher ->
-
+                            onVoucherAppliedAction(voucher)
+                            dismiss()
                         })
                     }
 

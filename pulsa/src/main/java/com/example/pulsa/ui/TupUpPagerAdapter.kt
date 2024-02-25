@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class MyPagerAdapter(
+class TupUpPagerAdapter(
     fragmentActivity: FragmentActivity,
     private val fragments: List<Fragment>,
     private val titles: List<String>) :

@@ -14,7 +14,7 @@ class TopUpFragment : Fragment(R.layout.fragment_top_up)  {
     private val binding: FragmentTopUpBinding by viewLifecycleScoped(
         FragmentTopUpBinding::bind
     )
-    private lateinit var pagerAdapter: MyPagerAdapter
+    private lateinit var pagerAdapter: TupUpPagerAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,7 +27,7 @@ class TopUpFragment : Fragment(R.layout.fragment_top_up)  {
         fragmentList.add(DataPackageFragment())
 
         val titleList = listOf(getString(R.string.pulsa), getString(R.string.data_package))
-        pagerAdapter = MyPagerAdapter(requireActivity(), fragmentList, titleList)
+        pagerAdapter = TupUpPagerAdapter(requireActivity(), fragmentList, titleList)
         binding.viewPager.adapter = pagerAdapter
 
         binding.apply {
