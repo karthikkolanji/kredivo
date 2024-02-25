@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_view"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_provider_logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/img_telkomsel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_mobile_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:text="123456789123"
+            android:textColor="@color/black"
+            android:textSize="@dimen/tv_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_provider_logo"
+            app:layout_constraintStart_toEndOf="@+id/iv_provider_logo"
+            app:layout_constraintTop_toTopOf="@+id/iv_provider_logo" />
+
+        <View
+            android:id="@+id/view_border_1"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:layout_marginTop="14dp"
+            android:background="@color/grey_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_provider_logo" />
+
+        <TextView
+            android:id="@+id/tv_payment_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/payment_details"
+            android:textColor="@color/black"
+            android:textSize="@dimen/tv_large"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="@+id/iv_provider_logo"
+            app:layout_constraintTop_toBottomOf="@+id/view_border_1" />
+
+        <TextView
+            android:id="@+id/tv_purchase_item_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="14dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="dfvdsvdsvvfbvfdbfbdfbdfbfdbdfbfdbdfbfdbfd"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/tv_medium"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toStartOf="@+id/tv_purchase_item_amount"
+            app:layout_constraintStart_toStartOf="@+id/iv_provider_logo"
+            app:layout_constraintTop_toBottomOf="@+id/tv_payment_details" />
+
+        <TextView
+            android:id="@+id/tv_purchase_item_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:text="dfvdsvds"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/tv_medium"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_purchase_item_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_purchase_item_name" />
+
+        <View
+            android:id="@+id/view_border_2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="18dp"
+            android:background="@color/grey_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_purchase_item_amount" />
+
+        <TextView
+            android:id="@+id/tv_sub_total_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:text="@string/sub_total"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/tv_medium"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="@+id/iv_provider_logo"
+            app:layout_constraintTop_toBottomOf="@+id/view_border_2" />
+
+        <TextView
+            android:id="@+id/tv_sub_total_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:text="dfvdsvds"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/tv_medium"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_sub_total_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_sub_total_label" />
+
+        <View
+            android:id="@+id/view_border_3"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/view_dotted"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sub_total_amount" />
+
+        <TextView
+            android:id="@+id/tv_payment_days"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/payment_days_30"
+            android:textColor="@color/black"
+            android:textSize="@dimen/tv_large"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="@+id/iv_provider_logo"
+            app:layout_constraintTop_toBottomOf="@+id/view_border_3" />
+
+        <TextView
+            android:id="@+id/tv_payment_days_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/payment_days_30"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/tv_large"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_payment_days"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_payment_days" />
+
+        <View
+            android:id="@+id/view_border_4"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:layout_marginTop="14dp"
+            android:background="@color/grey_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_payment_days_amount" />
+
+        <TextView
+            android:id="@+id/tv_voucher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/voucher"
+            android:textColor="@color/black"
+            android:textSize="@dimen/tv_large"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="@+id/iv_provider_logo"
+            app:layout_constraintTop_toBottomOf="@+id/view_border_4" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_voucher"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/view_border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/iv_provider_logo"
+            app:layout_constraintTop_toBottomOf="@+id/tv_voucher">
+
+
+            <ImageView
+                android:id="@+id/iv_voucher_logo"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_discount"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_voucher_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:text="@string/voucher_for_you"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/tv_medium"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_voucher_logo"
+                app:layout_constraintStart_toEndOf="@+id/iv_voucher_logo"
+                app:layout_constraintTop_toTopOf="@+id/iv_voucher_logo" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_view_voucher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/orange_light"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:text="@string/view"
+                android:textAlignment="center"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/tv_very_small"
+                app:cornerRadius="8dp"
+                app:elevation="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_voucher_code"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_voucher_code" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view_border_5"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:layout_marginTop="14dp"
+            android:background="@color/grey_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_voucher" />
+
+        <TextView
+            android:id="@+id/tv_pin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/enter_pin"
+            android:textColor="@color/black"
+            android:textSize="@dimen/tv_large"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="@+id/iv_provider_logo"
+            app:layout_constraintTop_toBottomOf="@+id/view_border_5" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_pin"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_pin"
+            app:passwordToggleDrawable="@drawable/show_hide_password"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_pin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/pin"
+                android:inputType="numberPassword"
+                android:maxLength="6" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_terms_and_condition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/terms_and_condition"
+            android:textAlignment="textStart"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/tv_medium"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_pin" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

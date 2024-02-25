@@ -4,5 +4,8 @@
     <color name="red">#FF5733</color>
     <color name="black">#000000</color>
     <color name="grey">#808080</color>
+    <color name="grey_light">#eeeeee</color>
     <color name="white">#FFFFFF</color>
+    <color name="orange">#ff7400</color>
+    <color name="orange_light">#ffcb77</color>
 </resources>

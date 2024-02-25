@@ -10,4 +10,14 @@
     <string name="pulsa">Pulsa</string>
     <string name="data_package">Data Package</string>
     <string name="top_up">Top Up</string>
+    <string name="purchase">Purchase</string>
+    <string name="payment_details">Payment Details</string>
+    <string name="sub_total">Subtotal</string>
+    <string name="payment_days_30">Pay in 30 days</string>
+    <string name="voucher">Voucher</string>
+    <string name="view">View</string>
+    <string name="voucher_for_you">Voucher for you</string>
+    <string name="enter_pin">Kredivo PIN</string>
+    <string name="pin">PIN</string>
+    <string name="terms_and_condition">By continuing, I agree with Product and Service Information Summary &amp; Kredivo loan agreement</string>
 </resources>
