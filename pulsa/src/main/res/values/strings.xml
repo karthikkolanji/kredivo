@@ -7,4 +7,7 @@
     <string name="recharge">Recharge</string>
     <string name="recharge_amount">Rp %1$s</string>
     <string name="coming_soon">Coming Soon...</string>
+    <string name="pulsa">Pulsa</string>
+    <string name="data_package">Data Package</string>
+    <string name="top_up">Top Up</string>
 </resources>
