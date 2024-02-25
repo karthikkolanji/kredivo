@@ -7,6 +7,7 @@ import androidx.navigation.fragment.navArgs
 import com.example.core.extensions.viewLifecycleScoped
 import com.example.pulsa.R
 import com.example.pulsa.databinding.FragmentPurchaseBinding
+import com.example.pulsa.ui.voucher.VoucherBottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -21,6 +22,7 @@ class PurchaseFragment : Fragment(R.layout.fragment_purchase) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         renderPurchase()
+        setClickListener()
     }
 
     private fun renderPurchase() {
@@ -30,6 +32,12 @@ class PurchaseFragment : Fragment(R.layout.fragment_purchase) {
             tvPurchaseItemName.text = "${plan.productName} ${plan.mobileNumber}"
             tvPurchaseItemAmount.text = plan.rechargeAmount.toString()
             tvPurchaseItemAmount.text = plan.rechargeAmount.toString()
+        }
+    }
+
+    private fun setClickListener() {
+        binding.btnViewVoucher.setOnClickListener {
+            VoucherBottomSheetDialog().show(childFragmentManager,"ModelBottomSheer")
         }
     }
 }

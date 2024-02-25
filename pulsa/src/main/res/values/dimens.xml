@@ -6,6 +6,7 @@
 
 
   <!--Textview-->
+  <dimen name="tv_heading">52sp</dimen>
   <dimen name="tv_extra_large">22sp</dimen>
   <dimen name="tv_large">18sp</dimen>
   <dimen name="tv_medium">16sp</dimen>

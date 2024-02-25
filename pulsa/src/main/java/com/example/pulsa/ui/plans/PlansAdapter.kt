@@ -1,6 +1,5 @@
 package com.example.pulsa.ui.plans
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -51,8 +50,4 @@ class PlansAdapter(
         val tvProductName: TextView = itemView.findViewById(R.id.tv_product_name)
         val btnRecharge: TextView = itemView.findViewById(R.id.btn_recharge)
     }
-}
-
-fun Context.getString() {
-
 }
