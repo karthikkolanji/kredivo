@@ -9,7 +9,7 @@ class PaymentDetailsResponseApiToDataMapper @Inject constructor() :
     ApiToDataMapper<PaymentDetailsResponseApiModel, PaymentDetailsResponseDataModel>() {
     override fun map(input: PaymentDetailsResponseApiModel) = PaymentDetailsResponseDataModel(
         orderId = input.transaction_context.order_id,
-        merchantLogoUrl = input.transaction_context.merchant_details.logo_url,
-        merchantName = input.transaction_context.merchant_details.name,
+        status = input.status,
+        checkoutAmount = input.transaction_context.checkout_amount.toInt()
     )
 }

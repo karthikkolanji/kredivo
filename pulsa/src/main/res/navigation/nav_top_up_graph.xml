@@ -29,6 +29,21 @@
         <action
             android:id="@+id/action_purchaseFragment_voucherBottomSheet"
             app:destination="@+id/voucherBottomSheet" />
+
+        <action
+            android:id="@+id/action_purchaseFragment_paymentDetailsFragment"
+            app:destination="@+id/paymentDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentDetailsFragment"
+        android:name="com.example.pulsa.ui.paymentdetails.PaymentDetailsFragment"
+        android:label="@string/top_up"
+        tools:layout="@layout/fragment_payment_details">
+        <argument
+            android:name="paymentDetails"
+            app:argType="com.example.pulsa.ui.paymentdetails.model.PaymentDetailsResponseUiModel" />
+
     </fragment>
 
 

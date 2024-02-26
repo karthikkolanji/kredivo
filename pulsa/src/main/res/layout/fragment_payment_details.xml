@@ -110,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:ellipsize="end"
-            android:textColor="@color/green"
+            android:textColor="@color/grey"
             android:textSize="@dimen/tv_medium"
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="@+id/tv_oder_id_label"

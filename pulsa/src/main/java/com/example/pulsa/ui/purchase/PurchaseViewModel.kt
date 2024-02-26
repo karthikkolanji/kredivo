@@ -19,8 +19,6 @@ import javax.inject.Inject
 @HiltViewModel
 class PurchaseViewModel @Inject constructor(
     private val topUpUseCase: TopUpUseCase,
-    private val purchaseRequestUiToDomainMapper: PurchaseRequestUiToDomainMapper,
-    private val plansItemResponseUiToDomainMapper: PlansItemResponseUiToDomainMapper
 ) : ViewModel() {
 
 
@@ -28,21 +26,10 @@ class PurchaseViewModel @Inject constructor(
     val voucherApplicationState: LiveData<PurchaseRequestDomainModel> = _voucherApplicationState
 
     suspend fun applyVoucher(plan: PlansItemResponseDomainModel, voucher: VoucherItemDomainModel?) {
-
         val result = topUpUseCase.applyVoucher(plan, voucher)
         _voucherApplicationState.value = result
 
     }
-
-//    suspend fun applyVoucher(plan: PlansItemResponseDomainModel, voucher: VoucherItemDomainModel?) =
-//        liveData {
-//            emit(Loading)
-//            try {
-//                emit(Success(topUpUseCase.applyVoucher(plan, voucher)))
-//            } catch (exception: Exception) {
-//                emit(ApiError.resolveError(exception))
-//            }
-//        }
 
     suspend fun removeVoucher(plan: PlansItemResponseDomainModel) {
         applyVoucher(plan, null)

@@ -9,7 +9,7 @@ class PaymentDetailsResponseDataToDomainMapper @Inject constructor() :
     DataToDomainMapper<PaymentDetailsResponseDataModel, PaymentDetailsResponseDomainModel>() {
     override fun map(input: PaymentDetailsResponseDataModel) = PaymentDetailsResponseDomainModel(
         orderId = input.orderId,
-        merchantName = input.merchantName,
-        merchantLogoUrl = input.merchantLogoUrl
+        status = input.status,
+        checkOutAmount = input.checkoutAmount
     )
 }

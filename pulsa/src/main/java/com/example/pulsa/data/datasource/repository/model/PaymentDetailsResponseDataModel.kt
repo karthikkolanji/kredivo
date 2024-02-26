@@ -5,6 +5,6 @@ import androidx.annotation.Keep
 @Keep
 data class PaymentDetailsResponseDataModel(
     val orderId: String,
-    val merchantLogoUrl: String,
-    val merchantName: String,
+    val status: String,
+    val checkoutAmount:Int
 )
