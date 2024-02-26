@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.core.extensions.gone
+import com.example.core.extensions.longToast
 import com.example.core.extensions.snackbar
 import com.example.core.extensions.viewLifecycleScoped
 import com.example.core.extensions.visible
@@ -16,14 +17,18 @@ import com.example.core.utils.UiState.Loading
 import com.example.core.utils.UiState.Success
 import com.example.pulsa.R
 import com.example.pulsa.databinding.FragmentPulsaPlansBinding
+import com.example.pulsa.ui.TopUpFragment
 import com.example.pulsa.ui.TopUpFragmentDirections
 import com.example.pulsa.ui.plans.mapper.PlansResponseDomainToUiMapper
+import com.example.pulsa.ui.utils.isValidMobileNumber
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+
 @AndroidEntryPoint
-class PulsaPlansFragment : Fragment(R.layout.fragment_pulsa_plans) {
+class PulsaPlansFragment :
+    Fragment(R.layout.fragment_pulsa_plans) {
 
     private val binding: FragmentPulsaPlansBinding by viewLifecycleScoped(
         FragmentPulsaPlansBinding::bind
@@ -33,8 +38,11 @@ class PulsaPlansFragment : Fragment(R.layout.fragment_pulsa_plans) {
     @Inject
     lateinit var plansResponseDomainToUiMapper: PlansResponseDomainToUiMapper
 
+    lateinit var mobileNumber: String
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         observerPlans()
     }
 
@@ -53,9 +61,18 @@ class PulsaPlansFragment : Fragment(R.layout.fragment_pulsa_plans) {
                     is Success -> {
                         val plans = plansResponseDomainToUiMapper.toUi(state.data)
                         setAdapter(PlansAdapter(plans.item) { plan ->
-                            findNavController().navigate(
-                                TopUpFragmentDirections.actionTopupFragmentToPurchaseFragment(plan)
-                            )
+
+                            getMobileNumberFromParentFragment()
+
+                            if (mobileNumber.isValidMobileNumber()) {
+                                findNavController().navigate(
+                                    TopUpFragmentDirections.actionTopupFragmentToPurchaseFragment(
+                                        plan.copy(mobileNumber = mobileNumber)
+                                    )
+                                )
+                            } else {
+                                longToast(R.string.invalid_mobile_number)
+                            }
                         })
                     }
 
@@ -68,6 +85,15 @@ class PulsaPlansFragment : Fragment(R.layout.fragment_pulsa_plans) {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    private fun getMobileNumberFromParentFragment() {
+        val fragments = parentFragment?.childFragmentManager?.fragments
+        fragments?.forEach {
+            if (it is TopUpFragment) {
+                mobileNumber = it.getMobileNumber()
             }
         }
     }

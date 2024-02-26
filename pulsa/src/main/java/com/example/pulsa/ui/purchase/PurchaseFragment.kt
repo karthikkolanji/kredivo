@@ -51,7 +51,6 @@ class PurchaseFragment : Fragment(R.layout.fragment_purchase) {
     @Inject
     lateinit var paymentDetailsResolver: PaymentDetailsResolver
 
-
     private lateinit var selectedPlanArgs: PlansItemResponseUiModel
     private lateinit var selectedPlanDomainModel: PlansItemResponseDomainModel
     private lateinit var purchaseDomainModel: PurchaseRequestDomainModel

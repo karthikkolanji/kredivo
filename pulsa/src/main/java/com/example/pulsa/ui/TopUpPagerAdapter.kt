@@ -4,11 +4,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class TupUpPagerAdapter(
-    fragmentActivity: FragmentActivity,
+class TopUpPagerAdapter(
+    fragment: Fragment,
     private val fragments: List<Fragment>,
     private val titles: List<String>) :
-    FragmentStateAdapter(fragmentActivity) {
+    FragmentStateAdapter(fragment) {
 
     override fun getItemCount() = fragments.size
 

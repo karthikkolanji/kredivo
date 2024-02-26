@@ -13,3 +13,5 @@ fun Fragment.getNavigationResult(key: String ): MutableLiveData<VoucherItemRespo
 fun Fragment.setNavigationResult(result: VoucherItemResponseUiModel, key: String ) {
     findNavController().previousBackStackEntry?.savedStateHandle?.set(key, result)
 }
+
+fun String.isValidMobileNumber()= length in 11..13

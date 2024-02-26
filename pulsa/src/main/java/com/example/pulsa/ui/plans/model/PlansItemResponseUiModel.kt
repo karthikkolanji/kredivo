@@ -15,5 +15,5 @@ data class PlansItemResponseUiModel(
     val productName: String,
     val rechargeAmount: Int,
     val talkTimeAmount: Int,
-    val mobileNumber: String = "2222222222"
+    val mobileNumber: String = ""
 ) : Parcelable
