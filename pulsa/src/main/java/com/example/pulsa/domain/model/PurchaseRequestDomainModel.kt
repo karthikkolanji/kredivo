@@ -1,6 +1,6 @@
-package com.example.pulsa.ui.purchase.model
+package com.example.pulsa.domain.model
 
-data class PurchaseRequestUiModel(
+data class PurchaseRequestDomainModel(
     val voucherApplied: Boolean,
     val voucherCode: String,
     val maxDiscount: Int,

@@ -10,7 +10,7 @@ class PlansItemResponseDomainToUiMapper @Inject constructor() :
     override fun map(input: PlansItemResponseDomainModel) = PlansItemResponseUiModel(
         productCode = input.productCode,
         productName = input.label,
-        rechargeAmount = input.price.toBigDecimal(),
-        talkTimeAmount = input.nominal.toBigDecimal(),
+        rechargeAmount = input.price,
+        talkTimeAmount = input.nominal,
     )
 }

@@ -6,25 +6,40 @@
     app:startDestination="@id/topupFragment">
 
 
-        <fragment
-            android:id="@+id/topupFragment"
-            android:name="com.example.pulsa.ui.TopUpFragment"
-            android:label="@string/top_up"
-            tools:layout="@layout/fragment_top_up" >
+    <fragment
+        android:id="@+id/topupFragment"
+        android:name="com.example.pulsa.ui.TopUpFragment"
+        android:label="@string/top_up"
+        tools:layout="@layout/fragment_top_up">
 
-            <action
-                android:id="@+id/action_topupFragment_to_purchaseFragment"
-                app:destination="@+id/purchaseFragment"/>
-        </fragment>
+        <action
+            android:id="@+id/action_topupFragment_to_purchaseFragment"
+            app:destination="@+id/purchaseFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/purchaseFragment"
         android:name="com.example.pulsa.ui.purchase.PurchaseFragment"
         android:label="@string/purchase"
-        tools:layout="@layout/fragment_purchase" >
+        tools:layout="@layout/fragment_purchase">
         <argument
             android:name="plan"
-            app:argType="com.example.pulsa.ui.plans.model.PlansItemResponseUiModel"/>
+            app:argType="com.example.pulsa.ui.plans.model.PlansItemResponseUiModel" />
+
+        <action
+            android:id="@+id/action_purchaseFragment_voucherBottomSheet"
+            app:destination="@+id/voucherBottomSheet" />
     </fragment>
+
+
+    <dialog
+        android:id="@+id/voucherBottomSheet"
+        android:name="com.example.pulsa.ui.voucher.VoucherBottomSheetDialog"
+        tools:layout="@layout/bottom_sheet_voucher">
+        <argument
+            android:name="plan"
+            app:argType="com.example.pulsa.ui.plans.model.PlansItemResponseUiModel" />
+    </dialog>
+
 
 </navigation>

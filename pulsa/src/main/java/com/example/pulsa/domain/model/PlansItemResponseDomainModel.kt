@@ -1,12 +1,8 @@
 package com.example.pulsa.domain.model
 
 data class PlansItemResponseDomainModel(
-    val billType: String,
-    val description: String,
     val label: String,
-    val nominal: String,
-    val operator: String,
-    val price: String,
+    val nominal: Int,
+    val price: Int,
     val productCode: String,
-    val sequence: Int
 )

@@ -21,22 +21,4 @@ class PulsaPlansViewModel @Inject constructor(private val topUpUseCase: TopUpUse
             emit(ApiError.resolveError(e))
         }
     }
-
-    suspend fun makePayment() = liveData {
-        emit(Loading)
-        try {
-            emit(Success(topUpUseCase.makePayment()))
-        } catch (e: Exception) {
-            emit(ApiError.resolveError(e))
-        }
-    }
-
-    suspend fun getVoucher() = liveData {
-        emit(Loading)
-        try {
-            emit(Success(topUpUseCase.getVoucher()))
-        } catch (e: Exception) {
-            emit(ApiError.resolveError(e))
-        }
-    }
 }

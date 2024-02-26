@@ -11,15 +11,10 @@ class VoucherItemsDataToDomainMapper @Inject constructor() :
     DataToDomainMapper<VoucherItemDataModel,VoucherItemDomainModel>() {
     override fun map(input: VoucherItemDataModel) = VoucherItemDomainModel(
         endDate = input.endDate,
-        howToUse = input.howToUse,
-        imageUrl = input.imageUrl,
         maxDiscount = input.maxDiscount,
         minTransactionAmount = input.minTransactionAmount,
         name = input.name,
         percentage = input.percentage,
-        startDate = input.startDate,
-        termsAndCondition = input.termsAndCondition,
-        usageCount = input.usageCount,
         voucherCode = input.voucherCode
     )
 }

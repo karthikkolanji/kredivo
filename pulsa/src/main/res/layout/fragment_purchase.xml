@@ -2,6 +2,7 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
     android:id="@+id/root_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -136,6 +137,44 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_sub_total_amount" />
 
         <TextView
+            android:id="@+id/tv_kredivo_discount_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:text="@string/kredivo_discount"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/tv_medium"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="@+id/iv_provider_logo"
+            app:layout_constraintTop_toBottomOf="@+id/view_border_3" />
+
+        <TextView
+            android:id="@+id/tv_kredivo_discount_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/tv_medium"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_kredivo_discount_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_kredivo_discount_label"
+            tool:text="dfvdsvds" />
+
+        <View
+            android:id="@+id/view_border_4"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="18dp"
+            android:background="@color/grey_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_kredivo_discount_amount" />
+
+        <TextView
             android:id="@+id/tv_payment_days"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -145,7 +184,7 @@
             android:textSize="@dimen/tv_large"
             android:textStyle="normal"
             app:layout_constraintStart_toStartOf="@+id/iv_provider_logo"
-            app:layout_constraintTop_toBottomOf="@+id/view_border_3" />
+            app:layout_constraintTop_toBottomOf="@+id/view_border_4" />
 
         <TextView
             android:id="@+id/tv_payment_days_amount"
@@ -161,7 +200,7 @@
             app:layout_constraintTop_toTopOf="@+id/tv_payment_days" />
 
         <View
-            android:id="@+id/view_border_4"
+            android:id="@+id/view_border_5"
             android:layout_width="match_parent"
             android:layout_height="12dp"
             android:layout_marginTop="14dp"
@@ -180,7 +219,7 @@
             android:textSize="@dimen/tv_large"
             android:textStyle="normal"
             app:layout_constraintStart_toStartOf="@+id/iv_provider_logo"
-            app:layout_constraintTop_toBottomOf="@+id/view_border_4" />
+            app:layout_constraintTop_toBottomOf="@+id/view_border_5" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_apply_voucher"
@@ -238,15 +277,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_voucher_applied"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
-            android:visibility="gone"
             android:layout_marginEnd="16dp"
             android:background="@drawable/view_border_green"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/iv_provider_logo"
             app:layout_constraintTop_toBottomOf="@+id/cl_apply_voucher">
@@ -297,7 +335,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <View
-            android:id="@+id/view_border_5"
+            android:id="@+id/view_border_6"
             android:layout_width="match_parent"
             android:layout_height="12dp"
             android:layout_marginTop="14dp"
@@ -316,7 +354,7 @@
             android:textSize="@dimen/tv_large"
             android:textStyle="normal"
             app:layout_constraintStart_toStartOf="@+id/iv_provider_logo"
-            app:layout_constraintTop_toBottomOf="@+id/view_border_5" />
+            app:layout_constraintTop_toBottomOf="@+id/view_border_6" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_pin"
@@ -357,6 +395,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/til_pin" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/gr_kredivo_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="tv_kredivo_discount_label,tv_kredivo_discount_amount,view_border_4" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

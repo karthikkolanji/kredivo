@@ -1,6 +1,6 @@
 <resources>
     <string name="title_top_up">Top Up</string>
-    <string name="currency">Rp</string>
+    <string name="currency">Rp %1$s</string>
     <string name="validity">Validity</string>
     <string name="validity_unlimited">Unlimited</string>
     <string name="talk_time">Talktime</string>
@@ -13,6 +13,7 @@
     <string name="purchase">Purchase</string>
     <string name="payment_details">Payment Details</string>
     <string name="sub_total">Subtotal</string>
+    <string name="kredivo_discount">Kredivo discount</string>
     <string name="payment_days_30">Pay in 30 days</string>
     <string name="voucher">Voucher</string>
     <string name="view">View</string>
@@ -23,6 +24,10 @@
     <string name="my_voucher">My Voucher</string>
     <string name="voucher_discount">VOUCHER \nDISCOUNT</string>
     <string name="percentage_symbol">&#37;</string>
+    <string name="max_discount">Discount: %1$d%% (Max: %2$drb)</string>
+    <string name="valid_until">Valid until: %1$s</string>
+    <string name="min_transaction">Min transaction: %1$drb</string>
+    <string name="voucher_code">(%1$s)</string>
     <string name="terms_and_condition">By continuing, I agree with Product and Service Information Summary &amp; Kredivo loan agreement</string>
 
 

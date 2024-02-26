@@ -4,6 +4,9 @@ import com.example.pulsa.data.datasource.repository.TopUpRepository
 import com.example.pulsa.domain.mapper.PaymentDetailsResponseDataToDomainMapper
 import com.example.pulsa.domain.mapper.PlansResponseDataToDomainMapper
 import com.example.pulsa.domain.mapper.VoucherResponseDataToDomainMapper
+import com.example.pulsa.domain.model.PlansItemResponseDomainModel
+import com.example.pulsa.domain.model.VoucherItemDomainModel
+import timber.log.Timber
 import javax.inject.Inject
 
 class TopUpUseCaseImp @Inject constructor(
@@ -18,7 +21,17 @@ class TopUpUseCaseImp @Inject constructor(
     override suspend fun makePayment() =
         paymentDetailsResponseDataToDomainMapper.toDomain(topUpRepository.makePayment())
 
-    override suspend fun getVoucher() =
-        voucherResponseDataToDomainMapper.toDomain(topUpRepository.getVoucher())
+    override suspend fun getVoucher(plan: PlansItemResponseDomainModel): List<VoucherItemDomainModel> {
+        val voucher = voucherResponseDataToDomainMapper.toDomain(topUpRepository.getVoucher())
+        val rechargeAmount = plan.price
+        return voucher.voucherItems.map { item ->
+            if (rechargeAmount >= item.minTransactionAmount) {
+                item.copy(isVoucherApplicable = true)
+            } else {
+                item.copy(isVoucherApplicable = false)
+            }
+        }
+
+    }
 
 }

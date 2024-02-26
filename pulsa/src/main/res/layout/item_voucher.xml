@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tool="http://schemas.android.com/tools"
     android:layout_marginStart="4dp"
     android:layout_marginTop="4dp"
     android:layout_marginEnd="4dp"
@@ -41,6 +42,19 @@
             app:layout_constraintTop_toTopOf="@+id/view_background" />
 
         <TextView
+            android:id="@+id/tv_voucher_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tool:text="VOUCHER50PROMO"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/tv_small"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@+id/tv_voucher_label"
+            app:layout_constraintEnd_toEndOf="@+id/tv_voucher_label"
+            app:layout_constraintTop_toBottomOf="@+id/tv_voucher_label" />
+
+        <TextView
             android:id="@+id/tv_voucher_percentage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -63,7 +77,7 @@
             android:textSize="@dimen/tv_extra_large"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/tv_voucher_percentage"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
         <TextView
@@ -74,7 +88,7 @@
             android:layout_marginTop="12dp"
             android:text="Discount 50%(Max.50rb)"
             android:textColor="@color/black"
-            android:textSize="@dimen/tv_medium"
+            android:textSize="@dimen/tv_small"
             android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view_background" />
@@ -86,19 +100,19 @@
             android:layout_marginStart="12dp"
             android:layout_marginTop="4dp"
             android:paddingBottom="12dp"
-            android:text="Valid until 01 March 2024"
+            tool:text="Valid until 01 March 2024"
             android:textColor="@color/grey"
-            android:textSize="@dimen/tv_small"
+            android:textSize="@dimen/tv_very_small"
             android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_voucher_condition" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_use_voucher"
+            style="@style/MaterialButtonStyle"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
-            android:backgroundTint="@color/orange"
             android:minWidth="0dp"
             android:minHeight="0dp"
             android:text="@string/use"
@@ -109,6 +123,18 @@
             app:layout_constraintBottom_toBottomOf="@+id/tv_voucher_validity"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/tv_voucher_condition" />
+
+        <TextView
+            android:id="@+id/tv_voucher_min_transaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tool:text="Min transaction 10500"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/tv_very_small"
+            android:layout_marginEnd="12dp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_use_voucher" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -42,3 +42,16 @@ abstract class DomainToUiMapper<INPUT : Any, OUTPUT : Any> {
     protected abstract fun map(input: INPUT): OUTPUT
 }
 
+abstract class UiToDomainMapper<INPUT : Any, OUTPUT : Any> {
+    fun toDomain(input: INPUT): OUTPUT = try {
+        map(input)
+    } catch (throwable: Throwable) {
+        throw DomainMapperException(
+            "Could not map ${input::class.simpleName}",
+            throwable
+        )
+    }
+
+    protected abstract fun map(input: INPUT): OUTPUT
+}
+

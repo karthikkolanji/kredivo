@@ -8,13 +8,9 @@ import javax.inject.Inject
 class PlansResponseDataToDomainMapper @Inject constructor() :
     DataToDomainMapper<PlansItemResponseDataModel, PlansItemResponseDomainModel>() {
     override fun map(input: PlansItemResponseDataModel) = PlansItemResponseDomainModel(
-        billType = input.billType,
-        description = input.description,
         label = input.label,
-        nominal = input.nominal,
-        operator = input.operator,
-        price = input.price,
+        nominal = input.nominal.toInt(),
+        price = input.price.toInt(),
         productCode = input.productCode,
-        sequence = input.sequence
     )
 }
