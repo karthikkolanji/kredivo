@@ -13,7 +13,11 @@
     <string name="top_up">Top Up</string>
     <string name="purchase">Purchase</string>
     <string name="payment_details">Payment Details</string>
+    <string name="order_details">Order Details</string>
     <string name="sub_total">Subtotal</string>
+    <string name="order_id">Order Id</string>
+    <string name="status">Status</string>
+    <string name="success">Success</string>
     <string name="kredivo_discount">Kredivo discount</string>
     <string name="payment_days_30">Pay in 30 days</string>
     <string name="voucher">Voucher</string>
@@ -33,6 +37,8 @@
     <string name="enter_pin">Enter your 6 digit PIN</string>
     <string name="voucher_applied_message">Yeay! You got %1$d%%  discount max Rp%2$d</string>
     <string name="terms_and_condition">By continuing, I agree with Product and Service Information Summary &amp; Kredivo loan agreement</string>
+    <string name="contact_support">If you have problem with your transaction, make sure to contact out customer service at 0807-1-573-348 or support@kredivo.com</string>
+
 
 
 </resources>
