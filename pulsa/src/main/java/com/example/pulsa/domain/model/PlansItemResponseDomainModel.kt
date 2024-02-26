@@ -5,4 +5,6 @@ data class PlansItemResponseDomainModel(
     val nominal: Int,
     val price: Int,
     val productCode: String,
+    val krdivoDisount: Int = 0,
+    val voucherApplied: Boolean = false
 )

@@ -1,4 +1,4 @@
-package com.example.pulsa.ui.purchase.mapper
+package com.example.pulsa.ui.plans.mapper
 
 import com.example.core.mapper.UiToDomainMapper
 import com.example.pulsa.domain.model.PlansItemResponseDomainModel

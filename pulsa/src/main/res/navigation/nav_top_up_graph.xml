@@ -23,7 +23,7 @@
         android:label="@string/purchase"
         tools:layout="@layout/fragment_purchase">
         <argument
-            android:name="plan"
+            android:name="selectedPlan"
             app:argType="com.example.pulsa.ui.plans.model.PlansItemResponseUiModel" />
 
         <action
@@ -37,7 +37,7 @@
         android:name="com.example.pulsa.ui.voucher.VoucherBottomSheetDialog"
         tools:layout="@layout/bottom_sheet_voucher">
         <argument
-            android:name="plan"
+            android:name="selectedPlan"
             app:argType="com.example.pulsa.ui.plans.model.PlansItemResponseUiModel" />
     </dialog>
 

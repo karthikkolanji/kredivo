@@ -1,12 +1,12 @@
 <resources>
     <string name="title_top_up">Top Up</string>
-    <string name="currency">Rp %1$s</string>
+    <string name="currency">Rp%1$d</string>
     <string name="validity">Validity</string>
     <string name="validity_unlimited">Unlimited</string>
     <string name="talk_time">Talktime</string>
     <string name="recharge">Recharge</string>
-    <string name="recharge_amount">Rp %1$s</string>
-    <string name="coming_soon">Coming Soon...</string>
+    <string name="recharge_amount">Rp%1$s</string>
+    <string name="coming_soon">Coming Soon…</string>
     <string name="pulsa">Pulsa</string>
     <string name="data_package">Data Package</string>
     <string name="top_up">Top Up</string>
@@ -25,9 +25,11 @@
     <string name="voucher_discount">VOUCHER \nDISCOUNT</string>
     <string name="percentage_symbol">&#37;</string>
     <string name="max_discount">Discount: %1$d%% (Max: %2$drb)</string>
+    <string name="discount_up_to">Discount up to Rp%1$d</string>
     <string name="valid_until">Valid until: %1$s</string>
     <string name="min_transaction">Min transaction: %1$drb</string>
     <string name="voucher_code">(%1$s)</string>
+    <string name="voucher_applied_message">Yeay! You got %1$d%%  discount max Rp%2$d</string>
     <string name="terms_and_condition">By continuing, I agree with Product and Service Information Summary &amp; Kredivo loan agreement</string>
 
 

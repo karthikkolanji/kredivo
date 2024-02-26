@@ -10,9 +10,9 @@ class PurchaseRequestUiToDomainMapper @Inject constructor() :
     override fun map(input: PurchaseRequestUiModel) = PurchaseRequestDomainModel(
         voucherApplied = input.voucherApplied,
         voucherCode = input.voucherCode,
+        rechargeAmount = input.rechargeAmount,
+        discountAmount = input.discountAmount,
         maxDiscount = input.maxDiscount,
-        discountPercentage = input.discountPercentage,
-        voucherValidity = input.voucherValidity,
-        minTransactionAmount = input.minTransactionAmount
+        percentage = input.discountPercentage
     )
 }

@@ -5,8 +5,8 @@ import com.example.pulsa.domain.mapper.PaymentDetailsResponseDataToDomainMapper
 import com.example.pulsa.domain.mapper.PlansResponseDataToDomainMapper
 import com.example.pulsa.domain.mapper.VoucherResponseDataToDomainMapper
 import com.example.pulsa.domain.model.PlansItemResponseDomainModel
+import com.example.pulsa.domain.model.PurchaseRequestDomainModel
 import com.example.pulsa.domain.model.VoucherItemDomainModel
-import timber.log.Timber
 import javax.inject.Inject
 
 class TopUpUseCaseImp @Inject constructor(
@@ -32,6 +32,29 @@ class TopUpUseCaseImp @Inject constructor(
             }
         }
 
+    }
+
+    override suspend fun applyVoucher(
+        plans: PlansItemResponseDomainModel,
+        voucher: VoucherItemDomainModel?
+    ): PurchaseRequestDomainModel {
+        return if (voucher != null) {
+            PurchaseRequestDomainModel(
+                voucherApplied = true,
+                voucherCode = voucher.voucherCode,
+                rechargeAmount = plans.price,
+                discountAmount = plans.price - voucher.maxDiscount,
+                maxDiscount = voucher.maxDiscount,
+                percentage = voucher.percentage
+            )
+        } else {
+            PurchaseRequestDomainModel(
+                voucherApplied = false,
+                rechargeAmount = plans.price,
+                maxDiscount = 0,
+                percentage = 0
+            )
+        }
     }
 
 }

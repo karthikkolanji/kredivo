@@ -7,7 +7,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import com.example.core.extensions.gone
-import com.example.core.extensions.shortToast
 import com.example.core.extensions.snackbar
 import com.example.core.extensions.viewLifecycleScoped
 import com.example.core.extensions.visible
@@ -16,20 +15,19 @@ import com.example.pulsa.R
 import com.example.pulsa.databinding.BottomSheetVoucherBinding
 import com.example.pulsa.ui.plans.model.PlansItemResponseUiModel
 import com.example.pulsa.ui.purchase.PurchaseFragmentArgs
-import com.example.pulsa.ui.purchase.mapper.PlansItemResponseUiToDomainMapper
-import com.example.pulsa.ui.voucher.mapper.VoucherItemResponseDomainToUiMapper
+import com.example.pulsa.ui.plans.mapper.PlansItemResponseUiToDomainMapper
+import com.example.pulsa.ui.utils.VOUCHER_KEY
+import com.example.pulsa.ui.utils.setNavigationResult
 import com.example.pulsa.ui.voucher.mapper.VoucherResponseDomainToUiMapper
-import com.example.pulsa.ui.voucher.model.VoucherItemResponseUiModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class VoucherBottomSheetDialog(private val onVoucherAppliedAction: (VoucherItemResponseUiModel) -> Unit) :
+class VoucherBottomSheetDialog :
     BottomSheetDialogFragment(R.layout.bottom_sheet_voucher) {
 
-    constructor() : this({})
 
     private val binding: BottomSheetVoucherBinding by viewLifecycleScoped(
         BottomSheetVoucherBinding::bind
@@ -43,7 +41,7 @@ class VoucherBottomSheetDialog(private val onVoucherAppliedAction: (VoucherItemR
     lateinit var voucherResponseDomainToUiMapper: VoucherResponseDomainToUiMapper
 
     @Inject
-    lateinit var  plansItemResponseUiToDomainMapper: PlansItemResponseUiToDomainMapper
+    lateinit var plansItemResponseUiToDomainMapper: PlansItemResponseUiToDomainMapper
 
     lateinit var selectedPlan: PlansItemResponseUiModel
 
@@ -54,39 +52,41 @@ class VoucherBottomSheetDialog(private val onVoucherAppliedAction: (VoucherItemR
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        selectedPlan = args.plan
+        selectedPlan = args.selectedPlan
         observerVoucher()
     }
 
     private fun observerVoucher() {
         lifecycleScope.launch {
-            viewModel.getVoucher(plansItemResponseUiToDomainMapper.toDomain(selectedPlan)).observe(viewLifecycleOwner) { state ->
-                when (state) {
-                    is UiState.Loading -> {
-                        binding.apply {
-                            progressview.visible()
-                            rvVoucher.gone()
-                            tvEmptyVoucher.gone()
+            viewModel.getVoucher(plansItemResponseUiToDomainMapper.toDomain(selectedPlan))
+                .observe(viewLifecycleOwner) { state ->
+                    when (state) {
+                        is UiState.Loading -> {
+                            binding.apply {
+                                progressview.visible()
+                                rvVoucher.gone()
+                                tvEmptyVoucher.gone()
+                            }
                         }
-                    }
 
-                    is UiState.Success -> {
-                        val voucher = voucherResponseDomainToUiMapper.toUi(state.data)
-                        setAdapter(VoucherAdapter(voucher.voucherItems) { voucher ->
+                        is UiState.Success -> {
+                            val voucher = voucherResponseDomainToUiMapper.toUi(state.data)
+                            setAdapter(VoucherAdapter(voucher.voucherItems) { voucher ->
+                                setNavigationResult(voucher, VOUCHER_KEY)
+                                dismiss()
+                            })
+                        }
 
-                        })
-                    }
-
-                    is UiState.Error -> {
-                        state.exception.localizedMessage?.let {
-                            binding.rootView.snackbar(
-                                it,
-                                Toast.LENGTH_LONG
-                            )
+                        is UiState.Error -> {
+                            state.exception.localizedMessage?.let {
+                                binding.rootView.snackbar(
+                                    it,
+                                    Toast.LENGTH_LONG
+                                )
+                            }
                         }
                     }
                 }
-            }
         }
     }
 

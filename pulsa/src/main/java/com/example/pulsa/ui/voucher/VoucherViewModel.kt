@@ -8,7 +8,7 @@ import com.example.core.utils.UiState
 import com.example.core.utils.UiState.Success
 import com.example.pulsa.domain.model.PlansItemResponseDomainModel
 import com.example.pulsa.domain.usecase.TopUpUseCase
-import com.example.pulsa.ui.purchase.mapper.PlansItemResponseUiToDomainMapper
+import com.example.pulsa.ui.plans.mapper.PlansItemResponseUiToDomainMapper
 import com.example.pulsa.ui.voucher.mapper.VoucherItemResponseUiToDomainMapper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
