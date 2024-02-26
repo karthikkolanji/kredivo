@@ -7,6 +7,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.core.extensions.afterTextChange
 import com.example.core.extensions.gone
 import com.example.core.extensions.viewLifecycleScoped
 import com.example.core.extensions.visible
@@ -90,12 +91,20 @@ class PurchaseFragment : Fragment(R.layout.fragment_purchase) {
 
     private fun setClickListener() {
         binding.apply {
+
             btnViewVoucher.setOnClickListener {
                 navigateToVoucherBottomSheet()
             }
+
             ivVoucherClose.setOnClickListener {
                 lifecycleScope.launch {
                     viewModel.removeVoucher(selectedPlanDomainModel)
+                }
+            }
+
+            etPin.afterTextChange {
+                binding.apply {
+                    btnPay.isEnabled = it.length >= 6
                 }
             }
         }

@@ -6,6 +6,7 @@
     android:id="@+id/root_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -282,13 +283,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
-            tool:visibility="visible"
             android:layout_marginEnd="16dp"
             android:background="@drawable/view_border_green"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/iv_provider_logo"
-            app:layout_constraintTop_toBottomOf="@+id/cl_apply_voucher">
+            app:layout_constraintTop_toBottomOf="@+id/cl_apply_voucher"
+            tool:visibility="visible">
 
 
             <ImageView
@@ -317,8 +318,8 @@
                 android:layout_height="wrap_content"
                 android:maxLines="2"
                 android:text="@string/voucher_for_you"
-                android:textColor="@color/grey"
                 android:textAlignment="textStart"
+                android:textColor="@color/grey"
                 android:textSize="@dimen/tv_small"
                 android:textStyle="normal"
                 app:layout_constraintStart_toStartOf="@+id/tv_voucher_discount"
@@ -350,7 +351,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:text="@string/enter_pin"
+            android:text="@string/kredivo_pin"
             android:textColor="@color/black"
             android:textSize="@dimen/tv_large"
             android:textStyle="normal"
@@ -365,6 +366,9 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
+            android:hint="@string/enter_pin"
+            app:expandedHintEnabled="true"
+            app:hintEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_pin"
@@ -375,7 +379,6 @@
                 android:id="@+id/et_pin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/pin"
                 android:inputType="numberPassword"
                 android:maxLength="6" />
 
@@ -388,14 +391,30 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
             android:text="@string/terms_and_condition"
             android:textAlignment="textStart"
             android:textColor="@color/grey"
             android:textSize="@dimen/tv_medium"
             android:textStyle="italic"
+            app:layout_constraintBottom_toTopOf="@+id/btn_pay"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/til_pin" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_pay"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="12dp"
+            android:enabled="false"
+            android:text="@string/pay"
+            android:textAllCaps="false"
+            app:cornerRadius="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.constraintlayout.widget.Group
             android:id="@+id/gr_kredivo_discount"
@@ -403,7 +422,5 @@
             android:layout_height="wrap_content"
             android:visibility="gone"
             app:constraint_referenced_ids="tv_kredivo_discount_label,tv_kredivo_discount_amount,view_border_4" />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

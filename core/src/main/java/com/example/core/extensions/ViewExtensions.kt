@@ -1,8 +1,11 @@
 package com.example.core.extensions
 
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.widget.TextView
 import androidx.annotation.StringRes
+import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.text.HtmlCompat
 import com.google.android.material.snackbar.Snackbar
 
@@ -48,4 +51,15 @@ fun View.isVisible() = visibility == View.VISIBLE
 
 fun TextView.setHtmlText(@StringRes stringId: Int) {
     this.text = HtmlCompat.fromHtml(context.getString(stringId), HtmlCompat.FROM_HTML_MODE_LEGACY)
+}
+
+fun AppCompatEditText.afterTextChange(afterTextChange: (String) -> Unit) {
+    this.addTextChangedListener(object : TextWatcher {
+        override fun afterTextChanged(s: Editable?) {
+            afterTextChange(s.toString())
+        }
+
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+    })
 }

@@ -5,6 +5,7 @@
     <string name="validity_unlimited">Unlimited</string>
     <string name="talk_time">Talktime</string>
     <string name="recharge">Recharge</string>
+    <string name="pay">Pay</string>
     <string name="recharge_amount">Rp%1$s</string>
     <string name="coming_soon">Coming Soon…</string>
     <string name="pulsa">Pulsa</string>
@@ -19,7 +20,7 @@
     <string name="view">View</string>
     <string name="use">Use</string>
     <string name="voucher_for_you">Voucher for you</string>
-    <string name="enter_pin">Kredivo PIN</string>
+    <string name="kredivo_pin">Kredivo PIN</string>
     <string name="pin">PIN</string>
     <string name="my_voucher">My Voucher</string>
     <string name="voucher_discount">VOUCHER \nDISCOUNT</string>
@@ -29,6 +30,7 @@
     <string name="valid_until">Valid until: %1$s</string>
     <string name="min_transaction">Min transaction: %1$drb</string>
     <string name="voucher_code">(%1$s)</string>
+    <string name="enter_pin">Enter your 6 digit PIN</string>
     <string name="voucher_applied_message">Yeay! You got %1$d%%  discount max Rp%2$d</string>
     <string name="terms_and_condition">By continuing, I agree with Product and Service Information Summary &amp; Kredivo loan agreement</string>
 
