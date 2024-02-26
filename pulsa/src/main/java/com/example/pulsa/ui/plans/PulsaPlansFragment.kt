@@ -38,7 +38,7 @@ class PulsaPlansFragment :
     @Inject
     lateinit var plansResponseDomainToUiMapper: PlansResponseDomainToUiMapper
 
-    lateinit var mobileNumber: String
+    private lateinit var mobileNumber: String
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -61,9 +61,7 @@ class PulsaPlansFragment :
                     is Success -> {
                         val plans = plansResponseDomainToUiMapper.toUi(state.data)
                         setAdapter(PlansAdapter(plans.item) { plan ->
-
                             getMobileNumberFromParentFragment()
-
                             if (mobileNumber.isValidMobileNumber()) {
                                 findNavController().navigate(
                                     TopUpFragmentDirections.actionTopupFragmentToPurchaseFragment(
@@ -75,7 +73,6 @@ class PulsaPlansFragment :
                             }
                         })
                     }
-
                     is Error -> {
                         state.exception.localizedMessage?.let {
                             binding.rootView.snackbar(

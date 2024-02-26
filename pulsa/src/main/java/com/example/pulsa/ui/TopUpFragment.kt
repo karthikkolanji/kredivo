@@ -3,7 +3,7 @@ package com.example.pulsa.ui
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import com.example.core.extensions.afterTextChange
+import com.example.core.extensions.shortToast
 import com.example.core.extensions.viewLifecycleScoped
 import com.example.pulsa.R
 import com.example.pulsa.databinding.FragmentTopUpBinding
@@ -19,7 +19,7 @@ class TopUpFragment : Fragment(R.layout.fragment_top_up) {
     private lateinit var pagerAdapter: TopUpPagerAdapter
 
 
-    private lateinit var mobileNumber:String
+    private lateinit var mobileNumber: String
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -28,8 +28,8 @@ class TopUpFragment : Fragment(R.layout.fragment_top_up) {
     }
 
     private fun setOnClickListener() {
-        binding.etMobileNumber.afterTextChange {
-            mobileNumber=it
+        binding.ivContacts.setOnClickListener {
+            shortToast(R.string.coming_soon)
         }
     }
 
@@ -50,5 +50,5 @@ class TopUpFragment : Fragment(R.layout.fragment_top_up) {
         }
     }
 
-    fun getMobileNumber()=mobileNumber
+    fun getMobileNumber() = binding.etMobileNumber.text.toString()
 }
