@@ -63,6 +63,8 @@ dependencies {
     implementation(libs.coroutines)
     implementation(libs.timber)
     testImplementation(libs.junit4)
+    testImplementation(libs.truth)
+    testImplementation(libs.mockk)
     androidTestImplementation(libs.androidx.test.junit.ext)
     androidTestImplementation(libs.androidx.test.expresso)
 }
