@@ -50,6 +50,7 @@ To run application on both Android and iOS follow [this](https://www.jetbrains.c
 - Design BaseScreenModel , BaseScreen
 - Native look and feel of Compose UI
 - Native SpashScreen for both Android & IOS
+- Modularization for features
 
 
 ## 👨 Developed By
