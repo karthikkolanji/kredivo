@@ -37,7 +37,7 @@ To make project work on both iOS and Android, you'll need to [setup](https://www
 To run application on both Android and iOS follow [this](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-create-first-app.html#run-your-application) step
 
 ### Screenshots/Demo
- Android - Light Theme (Left) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; iOS - Dark Theme (Right)
+ Android - Light Theme (Left) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; iOS - Dark Theme (Right)
 
  
 ![Android (Light Theme)](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTdlZTBndnkwaDZxZmt0dnMwazFxZ2pkZjR2MnZqd3F0YjBicWgweSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/DYXYDRLZFEJHlCvAvp/giphy.gif). &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![ iOS (Dark Theme)](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3BiMjNzZDI2cGZvdXZzNnBod25mY3pyNHJsZ2F1cW1vNTJkeWJ3aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/taxGg6KzYix2mG4fbc/giphy.gif)
