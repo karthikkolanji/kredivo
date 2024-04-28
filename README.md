@@ -31,7 +31,7 @@ key-value data storage
 - [MockK ](https://kotlinlang.org/api/latest/kotlin.test/) for mocking objects
 
 ### Project Structure
-![Project structure](https://i.imghippo.com/files/25rd41714304872.png)
+![Project structure](https://i.imghippo.com/files/pbUpX1714306115.jpg)
 
 
 ### Installation
