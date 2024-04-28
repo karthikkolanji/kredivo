@@ -38,7 +38,7 @@ To run application on both Android and iOS follow [this](https://www.jetbrains.c
 
 ### Screenshots/Demo
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Android (Light Theme) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iOS (Dark Theme)
-![Android (Light Theme)](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTdlZTBndnkwaDZxZmt0dnMwazFxZ2pkZjR2MnZqd3F0YjBicWgweSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/DYXYDRLZFEJHlCvAvp/giphy.gif). &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![ iOS (Dark Theme)](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3BiMjNzZDI2cGZvdXZzNnBod25mY3pyNHJsZ2F1cW1vNTJkeWJ3aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/taxGg6KzYix2mG4fbc/giphy.gif)
+![Android (Light Theme)](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTdlZTBndnkwaDZxZmt0dnMwazFxZ2pkZjR2MnZqd3F0YjBicWgweSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/DYXYDRLZFEJHlCvAvp/giphy.gif). &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![ iOS (Dark Theme)](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3BiMjNzZDI2cGZvdXZzNnBod25mY3pyNHJsZ2F1cW1vNTJkeWJ3aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/taxGg6KzYix2mG4fbc/giphy.gif)
 
 ### Roadmap
 - fgfgfggh
