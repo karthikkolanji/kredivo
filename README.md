@@ -35,7 +35,7 @@ key-value data storage
 
 
 ### Installation
-To make project work on both iOS and Android, you'll need to [setup](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-setup.html)  an environment for Kotlin Multiplatform development. 
+To make project work on both Android and iOS, you'll need to [setup](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-setup.html)  an environment for Kotlin Multiplatform development. 
 
 ### Usage
 To run application on both Android and iOS follow [this](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-create-first-app.html#run-your-application) step
