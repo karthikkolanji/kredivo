@@ -27,7 +27,6 @@ The app uses the following multiplatform dependencies in its implementation:
 - [Kermit ](https://kermit.touchlab.co/docs/) for logging
 - [Multiplatform Settings ](https://github.com/russhwolf/multiplatform-settings) for persist key-value data storage
 - [Koltin Test ](https://kotlinlang.org/api/latest/kotlin.test/) for assertions
-key-value data storage
 - [MockK ](https://kotlinlang.org/api/latest/kotlin.test/) for mocking objects
 
 ### Project Structure
